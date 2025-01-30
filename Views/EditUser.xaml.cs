@@ -11,20 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApp3.ViewModel;
 
 namespace WpfApp3.Views
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for EditUser.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class EditUser : Window
     {
-        public Main()
+        public EditUser()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
-            this.DataContext = mainViewModel;
         }
     }
 }

@@ -16,15 +16,15 @@ using WpfApp3.ViewModel;
 namespace WpfApp3.Views
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for AddUser.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class AddUser : Window
     {
-        public Main()
+        public AddUser()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
-            this.DataContext = mainViewModel;
+            AddUserViewModel addUserViewModel = new AddUserViewModel();
+            this.DataContext = addUserViewModel;
         }
     }
 }

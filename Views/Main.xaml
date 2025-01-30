@@ -7,12 +7,29 @@
         mc:Ignorable="d"
         Title="Main" Height="450" Width="800">
     <Grid>
-        <Button Height="30"    Content="Add User" Width="100" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0"  />
-        <ListView    Padding="0">
+        <Button Height="30"  Command="{Binding ShowWindowCommand}"  Content="Add User" Width="100" VerticalContentAlignment="Center" Padding="5" Margin="25" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="#E0E0E0"  />
+        <ListView Name="UserList" ItemsSource="{Binding Users}"  Margin="25,70,25,25" Padding="0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  Header="Name"/>
-                    <GridViewColumn  Header="Email"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}"  Header="Name" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" Width="200"/>
+
+                    <GridViewColumn Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit"  Width="100" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete"  Width="100" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
                 </GridView>
             </ListView.View>
         </ListView>

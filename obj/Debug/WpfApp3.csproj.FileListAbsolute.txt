@@ -15,3 +15,7 @@ C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\WpfApp3.exe
 C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\WpfApp3.pdb
 C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\Main.g.cs
 C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\Main.baml
+C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\AddUser.g.cs
+C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\AddUser.baml
+C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\EditUser.g.cs
+C:\Users\Lenovo\Desktop\Nikhil\WpfApp3\WpfApp\WpfApp3\obj\Debug\Views\EditUser.baml
