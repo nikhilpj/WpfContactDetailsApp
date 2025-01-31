@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp3.Models;
+using WpfApp3.ViewModel;
 
 namespace WpfApp3.Views
 {
@@ -19,9 +21,12 @@ namespace WpfApp3.Views
     /// </summary>
     public partial class EditUser : Window
     {
-        public EditUser()
+        public EditUser(MainViewModel mainViewModel,User userToEdit)
         {
             InitializeComponent();
+            EditUserViewModel editUser = new EditUserViewModel(mainViewModel, userToEdit);
+            DataContext = editUser;
+
         }
     }
 }
