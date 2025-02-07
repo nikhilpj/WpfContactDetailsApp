@@ -10,10 +10,11 @@ using WpfApp3.Models;
 using WpfApp3.Views;
 using WpfApp3.ViewModel;
 using System.Windows;
+using System.ComponentModel;
 
 namespace WpfApp3.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<User> Users { get; set; }
 
@@ -23,6 +24,10 @@ namespace WpfApp3.ViewModel
         public ICommand ShowEditWindowCommand { get; set; }
 
         private User _selectedValue;
+
+        
+
+       
         public User SelectedValue
         {
             get
@@ -32,6 +37,9 @@ namespace WpfApp3.ViewModel
             set
             {
                 _selectedValue = value;
+                OnPropertyChanged(nameof(SelectedValue));
+               
+             
             }
         }
 
@@ -50,9 +58,17 @@ namespace WpfApp3.ViewModel
 
         private void ShowEditWindow(object obj)
         {
-            MessageBox.Show("rfyfyhf");
-            EditUser editUserWin = new EditUser(this,SelectedValue);
-            editUserWin.Show();
+           
+            if (SelectedValue != null)
+            {
+                EditUser editUserWin = new EditUser(SelectedValue);
+                editUserWin.Show();
+            }
+            else
+            {
+                MessageBox.Show("No user selected for editing.");
+            }
+            
         }
 
         private bool CanDelete(object obj)
@@ -77,6 +93,12 @@ namespace WpfApp3.ViewModel
         {
             AddUser addUserWin = new AddUser();
             addUserWin.Show();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -21,5 +21,10 @@ namespace WpfApp3.Models
         {
             _DatabaseUsers.Add(user);
         }
+        public static void EditUser(User user)
+        {
+            
+
+        }
     }
 }

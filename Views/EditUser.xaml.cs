@@ -21,12 +21,21 @@ namespace WpfApp3.Views
     /// </summary>
     public partial class EditUser : Window
     {
-        public EditUser(MainViewModel mainViewModel,User userToEdit)
+      
+        public EditUser(User user)
         {
-            InitializeComponent();
-            EditUserViewModel editUser = new EditUserViewModel(mainViewModel, userToEdit);
-            DataContext = editUser;
-
+            try
+            {
+              
+                InitializeComponent();
+                this.DataContext = user;
+               
+                
+            }
+            catch(Exception ex){
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+           
         }
     }
 }
