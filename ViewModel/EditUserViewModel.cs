@@ -17,11 +17,14 @@ namespace WpfApp3.ViewModel
         public ICommand EditUserCommand { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        private User _user;
 
        
-        public EditUserViewModel()
+        public EditUserViewModel(User user)
         {
-            
+            _user = user;
+            Name = user.Name;
+            Email = user.Email;
             
             EditUserCommand = new RelayCommand(EditUser,CanEditUser);
         }
@@ -34,7 +37,8 @@ namespace WpfApp3.ViewModel
         private void EditUser(object obj)
         {
             
-            
+            _user.Name = Name;
+            _user.Email = Email;
         }
     }
 }

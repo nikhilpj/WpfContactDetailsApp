@@ -23,7 +23,12 @@ namespace WpfApp3.Models
         }
         public static void EditUser(User user)
         {
-            
+            var existingUser = _DatabaseUsers.FirstOrDefault(u=>u.Name == user.Name && u.Email == user.Email);
+            if (existingUser != null)
+            {
+                existingUser.Email = user.Email;
+                existingUser.Name = user.Name;
+            }
 
         }
     }

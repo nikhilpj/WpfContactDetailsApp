@@ -28,7 +28,8 @@ namespace WpfApp3.Views
             {
               
                 InitializeComponent();
-                this.DataContext = user;
+                EditUserViewModel editUserViewModel = new EditUserViewModel(user);
+                this.DataContext = editUserViewModel;
                
                 
             }
